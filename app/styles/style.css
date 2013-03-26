@@ -1,0 +1,76 @@
+.site-list{
+	background-color: #2c3e50;
+	border-radius: 8px 8px 6px 6px;
+	color:#6285a8;
+	margin-bottom: 20px;
+}
+
+.site-list ul{
+	margin:0;
+	list-style-type: none;
+}
+
+.site-list a{
+	text-decoration: none;
+}
+
+.site-list ul {
+  margin: 0;
+  list-style-type: none; }
+.site-list li {
+  background: #34495e url("../img/todo.png") 92% center no-repeat;
+  background-size: 20px 20px;
+  cursor: pointer;
+  margin-top: 2px;
+  padding: 18px 42px 17px 25px;
+  position: relative;
+  -webkit-transition: 0.25s;
+  -moz-transition: 0.25s;
+  -o-transition: 0.25s;
+  transition: 0.25s;
+  -webkit-backface-visibility: hidden; }
+  .site-list li:first-child {
+    border-radius: 6px 6px 0 0; }
+  .site-list li:last-child {
+    border-radius: 0 0 6px 6px;
+    padding-bottom: 18px; }
+    .site-list li.todo-done .site-name {
+      color: #1abc9c; }
+
+
+.site-content {
+  padding-top: 1px;
+  overflow: hidden; }
+
+.site-name {
+  color: white;
+  font-size: 17px;
+  margin: 1px 0 3px; }
+
+.site-list-container
+{
+	margin-left:28%;
+}
+
+.share:before{
+  display:none;
+}
+
+.share label{
+  width:auto;
+}
+
+td.no-waste{
+  text-align:center;
+}
+
+
+.content{
+  margin-top: 60px;
+}
+
+
+  .navbar-inverse .nav-collapse .nav > li > a,
+  .navbar-inverse .nav-collapse .dropdown-menu a {
+    color: white;
+  }

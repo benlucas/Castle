@@ -1,0 +1,73 @@
+<div class="navbar navbar-inverse navbar-fixed-top" bs-navbar>
+	<div class="navbar-inner">
+		<div class="container">
+			<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<div class="nav-collapse collapse">
+				<ul class="nav">
+					<li>
+						<a href="#">Waste</a>
+					</li>
+					<li>
+						<a href="#">Turnover</a>
+					</li>
+					<li>
+						<a href="#">Expenses</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="container">
+	<div class="content">
+		<h1>Waste</h1>
+		<div class="span3">
+		<h2>Select Date</h2>
+			<div id="5" data-date="{{data.date | date}}" data-date-format="dd/mm/yy" ng-change="getWaste()" ng-model="data.date" bs-datepicker></div>
+		</div>
+		<div class="span8">
+			<h2>Add New Waste</h2>
+			<form name="newWaste">
+				<select class="span3" value="Beer" name="beer" ng-model="data.beer" required>
+					<option value="" ng-selected="selected">Choose Beer</option>
+					<% for(var i=0; i<beer.length; i++) { %>
+						<option value="<%= beer[i]._id %>"><%= beer[i].name %></option>
+					<% } %>
+				</select>
+				<input type="number" value="" placeholder="Waste in Pints" name="waste" ng-model="data.waste" min="0" max="99" required>
+				<input type="text" value="" placeholder="Notes" name="notes" ng-model="data.notes">
+				<a href="" name="saveWaste" class="btn" ng:click="save()" ng-disabled="newWaste.$pristine || newWaste.$invalid">Save</a>
+			</form>
+			<hr/>
+		</div>
+		<div class="span7">
+			<h2>Current Wastage</h2>
+			<table class="table table-bordered table-hover">
+				<thead>
+					<tr>
+						<th>Date</th>
+						<th>Beer</th>
+						<th>Waste</th>
+						<th>Notes</th>
+						<th>Person</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="wastage in pub.waste">
+						<td>{{wastage.date | date}}</td>
+						<td>{{wastage.beer.name}}</td>
+						<td>{{wastage.waste}}</td>
+						<td>{{wastage.notes}}</td>
+						<td>Test</td>
+					</tr>
+					<tr ng-show="!pub.waste.length"><td class="no-waste" colspan="5">No Waste For {{data.date | date}}</td></tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>

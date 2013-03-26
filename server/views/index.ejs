@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+	<head>
+		<meta charset="utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+		<title><%= title %></title>
+		<meta name="description" content=""/>
+		<meta name="viewport" content="width=device-width"/>
+		<!-- build:css(app) styles/site.css -->
+		<link rel="stylesheet" href="styles/bootstrap.css"/>
+		<link rel="stylesheet" href="styles/bootstrap-responsive.css"/>
+		<link rel="stylesheet" href="styles/datepicker.css"/>
+		<link rel="stylesheet" href="styles/flat-ui.css"/>
+		<link rel="stylesheet" href="styles/style.css"/>
+		<!-- endbuild -->
+
+	</head>
+	<body ng-app="Castle">
+
+		<!--[if lt IE 7]>
+			<p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+		<![endif]-->
+		
+		<!--[if lt IE 9]>
+			<script src="scripts/vendor/es5-shim.min.js"></script>
+			<script src="scripts/vendor/json3.min.js"></script>
+		<![endif]-->
+
+		<!-- Add your site or application content here -->
+		<div ng-view></div>
+
+		<script>
+			// var _errs=["514b2cb786c4c3865f000046"];(function(a,b){a.onerror=function(){_errs.push(arguments)};
+			// var d=function(){var a=b.createElement("script"),c=b.getElementsByTagName("script")[0];
+			// a.src="//d15qhc0lu1ghnk.cloudfront.net/beacon.js";a.async=!0;
+			// c.parentNode.insertBefore(a,c)};a.addEventListener?a.addEventListener("load",d,!1):
+			// a.attachEvent("onload",d)})(window,document);
+		</script>
+
+
+<!--
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.5/angular.min.js"></script>
+		<script src="scripts/vendor/angular-resource.js"></script>
+		
+		<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.0.0/js/bootstrap-datepicker.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/angular-strap/0.7.1/angular-strap.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.0.0/moment.min.js"></script>
+
+
+		<script src="scripts/vendor/jquery-1.9.1.min.js"></script>
+		<script src="scripts/vendor/angular.js"></script>
+		<script src="scripts/vendor/angular-resource.js"></script>
+		
+		<script src="scripts/vendor/bootstrap-transition.js"></script>
+		<script src="scripts/vendor/bootstrap-datepicker.js"></script>
+		<script src="scripts/vendor/bootstrap-collapse.js"></script>
+		<script src="scripts/vendor/angular-strap.js"></script>
+		<script src="scripts/vendor/moment.js"></script>
+-->
+
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.5/angular.min.js"></script>
+		
+		
+		<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.0.0/js/bootstrap-datepicker.min.js"></script>
+		
+		<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.0.0/moment.min.js"></script>
+
+		<!-- build:js(app) scripts/scripts.js -->
+		<script src="scripts/vendor/angular-resource.js"></script>
+		<script src="scripts/vendor/angular-strap.js"></script>
+		<script src="scripts/app.js"></script>
+		<script src="scripts/services.js"></script>
+		<script src="scripts/filters.js"></script>
+		<script src="scripts/controllers/pub.js"></script>
+		<script src="scripts/controllers/pub/pubIndex.js"></script>
+		<script src="scripts/controllers/pub/pubWaste.js"></script>
+		<!-- endbuild -->
+
+		<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+		<script>
+		//     var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+		//     (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+		//     g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+		//     s.parentNode.insertBefore(g,s)}(document,'script'));
+		// </script>
+		<% if(locals.LRScript){%>
+			<%- LRScript %>
+		<% } %>
+	</body>
+</html>
