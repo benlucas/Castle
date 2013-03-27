@@ -40,14 +40,10 @@ module.exports = function(app){
 		// res.send("done");
 		var date = moment().millisecond(0).seconds(0).minutes(0).hours(0);
 
-		console.log(req.query.date);
-		//console.log(moment(req.query.date, 'DD/MM/YY').isValid());
-		//console.log(moment(req.query.date, 'DD/MM/YY'));
+
 		if(req.query.date){
 			date = moment(req.query.date, 'DD/MM/YY').isValid() ? moment(req.query.date, 'DD/MM/YY') : date;
 		}
-
-		console.log(date);
 
 		pubs.findOne({slug: req.params.slug}, 'name location slug waste')
 		.populate('waste.beer')
