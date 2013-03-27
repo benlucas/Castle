@@ -37,8 +37,6 @@ module.exports = function(grunt) {
 		// },
 
 		jshint: {
-			server: ['Gruntfile.js', 'server/**/*.js'],
-			client: ['app/scripts/*.js','app/scripts/controllers/*.js'],
 			options: {
 				curly: true,
 				eqeqeq: true,
@@ -54,12 +52,15 @@ module.exports = function(grunt) {
 				browser: true,
 				node: true,
 				strict: true,
-				globalstrict: true
+				globalstrict: true,
+				globals: {
+					angular: true,
+					moment: true,
+					Castle: true
+				}
 			},
-			globals: {
-				angular: true,
-				module: true
-			}
+			server: ['Gruntfile.js', 'server/**/*.js'],
+			client: ['app/scripts/*.js','app/scripts/controllers/*.js']
 		},
 		///////////////
 		// Build Stuff

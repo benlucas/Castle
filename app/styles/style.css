@@ -47,11 +47,6 @@
   font-size: 17px;
   margin: 1px 0 3px; }
 
-.site-list-container
-{
-	margin-left:28%;
-}
-
 .share:before{
   display:none;
 }
@@ -70,7 +65,12 @@ td.no-waste{
 }
 
 
-  .navbar-inverse .nav-collapse .nav > li > a,
-  .navbar-inverse .nav-collapse .dropdown-menu a {
-    color: white;
-  }
+.navbar-inverse .nav-collapse .nav > li > a,
+.navbar-inverse .nav-collapse .dropdown-menu a {
+  color: white;
+}
+
+.menu {
+  float:center;
+  margin: 0px auto;
+}
