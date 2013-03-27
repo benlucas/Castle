@@ -15,7 +15,7 @@ module.exports = function(grunt) {
 		regarde: {
 			serverjs: {
 				files: ['server/*.js', 'server/models/*.js', 'server/routes/*.js' ],
-				tasks: ['jshint:server', 'express-server'],
+				tasks: ['jshint:server', 'express-server'], 
 				spawn: true
 			},
 			clientjs: {
