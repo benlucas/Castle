@@ -1,6 +1,6 @@
 
 'use strict';
-var Castle = angular.module('Castle', ['castle.services', '$strap.directives']).
+var Castle = angular.module('Castle', ['castle.services', '$strap.directives', 'castle.directives']).
 	config(['$routeProvider', function($routeProvider) {
 		
 		$routeProvider
@@ -13,8 +13,16 @@ var Castle = angular.module('Castle', ['castle.services', '$strap.directives']).
 				controller: 'PubIndexCtrl'
 			})
 			.when('/pub/:slug/waste', { 
-				templateUrl: 'view/pub/waste',
+				templateUrl: 'view/pub/waste', 
 				controller: 'PubWasteCtrl' 
+			})
+			.when('/pub/:slug/turnover', { 
+				templateUrl: 'view/pub/turnover',
+				controller: 'PubTurnoverCtrl'
+			})
+			.when('/pub/:slug/expenses', { 
+				templateUrl: 'view/pub/expenses',
+				controller: 'PubExpensesCtrl'
 			});
 			// .when('/api/post/index', {
 			// 	templateUrl: 'views/post/postIndex.html',

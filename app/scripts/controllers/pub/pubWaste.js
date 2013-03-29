@@ -34,6 +34,3 @@ Castle.controller('PubWasteCtrl', ['$scope', '$routeParams', 'WasteFactory',
 		};
 	}
 ]);
-
-
-//{ '$or': [ { _id: '51431406bc06e2d2a214192b' }, { _id: '514109b754a046d11b7b5689' }, { _id: 'pub1' } ] }

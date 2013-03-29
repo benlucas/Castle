@@ -62,13 +62,7 @@ td.no-waste{
 
 .content{
   margin-top: 60px;
-}
-
-
-.navbar-inverse .nav-collapse .nav > li > a,
-.navbar-inverse .nav-collapse .dropdown-menu a {
-  color: white;
-}
+} 
 
 .menu {
   float:center;

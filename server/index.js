@@ -10,7 +10,9 @@ if(app.settings.env === 'development'){
 	console.log(app.settings.env);
 	var livereload = require('express-livereload');
 	livereload(app, {
-		watchDir: __dirname + '/../app'
+		watchDir: __dirname + '/../',
+		exts: ['js', 'ejs', 'css'],
+		exclusions: ['dist', 'node_modules', 'config', 'test']
 	});
 }
 
