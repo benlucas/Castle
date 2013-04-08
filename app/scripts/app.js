@@ -1,8 +1,8 @@
 
 'use strict';
-var Castle = angular.module('Castle', ['castle.services', '$strap.directives', 'castle.directives']).
-	config(['$routeProvider', function($routeProvider) {
-		
+var Castle = angular.module('Castle', ['Castle.Services', 'Castle.Directives', '$strap.directives']).
+	config(['$routeProvider','$locationProvider', function($routeProvider, $location) {
+		//$location.html5Mode(true);
 		$routeProvider
 			.when('/', {
 				templateUrl: 'view/main',
@@ -23,24 +23,11 @@ var Castle = angular.module('Castle', ['castle.services', '$strap.directives', '
 			.when('/pub/:slug/expenses', { 
 				templateUrl: 'view/pub/expenses',
 				controller: 'PubExpensesCtrl'
+			})
+			.when('/404', { 
+				controller: 'errorCtrl'
+			})
+			.otherwise({ 
+				redirectTo: '/404'
 			});
-			// .when('/api/post/index', {
-			// 	templateUrl: 'views/post/postIndex.html',
-			// 	controller: 'PostIndexCtrl'
-			// })
-			// .when('/api/post/create', {
-			// 	templateUrl: 'views/post/postCreate.html',
-			// 	controller: 'PostCreateCtrl'
-			// })
-			// .when('/api/post/update/:id', {
-			// 	templateUrl: 'views/post/postUpdate.html',
-			// 	controller: 'PostUpdateCtrl'
-			// })
-			// .when('/api/post/view/:id', {
-			// 	templateUrl: 'views/post/postView.html', 
-			// 	controller: 'PostViewCtrl'
-			// });
-			// .otherwise({
-			//   redirectTo: '/'
-			// });
 	}]);    

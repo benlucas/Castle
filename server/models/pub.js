@@ -11,7 +11,13 @@ pubSchema = new Schema({
 		date: Date,
 		waste: Number,
 		notes: String
+	})],
+	turnover: [new Schema({
+		date: Date,
+		turnover: Number,
+		notes: String
 	})]
 });
 
 module.exports = mongoose.model('pub', pubSchema, 'pubs');
+

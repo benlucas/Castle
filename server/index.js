@@ -6,8 +6,8 @@ var app = express();
 
 //app.settings.env = 'production'
 
+//setup livereload if we're in production
 if(app.settings.env === 'development'){
-	console.log(app.settings.env);
 	var livereload = require('express-livereload');
 	livereload(app, {
 		watchDir: __dirname + '/../',

@@ -9,40 +9,35 @@
 		</div>
 		<div class="span8">
 			<h2>Add New Turnover</h2>
-			<form name="newWaste">
-				<select class="span3" value="Beer" name="beer" ng-model="data.beer" required>
-					<option value="" ng-selected="selected">Choose Beer</option>
-					<% for(var i=0; i<beer.length; i++) { %>
-						<option value="<%= beer[i]._id %>"><%= beer[i].name %></option>
-					<% } %>
-				</select>
-				<input type="number" value="" placeholder="Waste in Pints" name="waste" ng-model="data.waste" min="0" max="99" required>
+			<form name="newTurnover">
+				<input type="number" value="" placeholder="Turnover" name="turnover" ng-model="data.turnover" min="0" max="999999" required>
 				<input type="text" value="" placeholder="Notes" name="notes" ng-model="data.notes">
-				<a href="" name="saveWaste" class="btn" ng:click="save()" ng-disabled="newWaste.$pristine || newWaste.$invalid">Save</a>
+				<a href="" name="save" class="btn" ng:click="save()" ng-disabled="newTurnover.$pristine || newTurnover.$invalid">Save</a>
 			</form>
+			<h8>Last week turnover: £3000</h8>
 			<hr/>
 		</div>
 		<div class="span7">
-			<h2>Current Wastage</h2>
+			<h2>This week</h2>
 			<table class="table table-bordered table-hover">
 				<thead>
 					<tr>
 						<th>Date</th>
-						<th>Beer</th>
-						<th>Waste</th>
+						<th>Turnover</th>
 						<th>Notes</th>
-						<th>Person</th>
 					</tr>
 				</thead>
 				<tbody>
-					<tr ng-repeat="wastage in pub.waste">
-						<td>{{wastage.date | date}}</td>
-						<td>{{wastage.beer.name}}</td>
-						<td>{{wastage.waste}}</td>
-						<td>{{wastage.notes}}</td>
-						<td>Test</td>
+					<tr ng-repeat="turnover in pub.turnover">
+						<td>{{turnover.date | date}}</td>
+						<td>{{turnover.turnover}}</td>
+						<td>{{turnover.notes}}</td>
 					</tr>
-					<tr ng-show="!pub.waste.length"><td class="no-waste" colspan="5">No Waste For {{data.date | date}}</td></tr>
+					<tr ng-show="!pub.turnover.length"><td class="no-waste" colspan="5">No Turnover For {{data.date | date}}</td></tr>
+					<tr ng-show="pub.turnover.length">
+						<td>Total</td>
+						<td>£4444</td>
+					</tr>
 				</tbody>
 			</table>
 		</div>

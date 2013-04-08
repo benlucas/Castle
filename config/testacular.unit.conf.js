@@ -4,17 +4,19 @@ files = [
 
   //3rd Party Code
   'app/scripts/vendor/angular.js',
+  'app/scripts/vendor/angular-*.js',
+  'app/scripts/vendor/moment.js',
   'test/vendor/angular-mocks.js',
 
   //App-specific code
   'app/scripts/*.js',
-  'app/scripts/**/*.js',
+  'app/scripts/controllers/pub/*.js',
+  'app/scripts/controllers/pub.js',
+  'app/scripts/controllers/*.js',
 
   //Test-specs
-  'test/mock/**/*.js',
   'test/unit/spec/**/*.js'
 ];
-
 
 // web server port
 port = 8080;

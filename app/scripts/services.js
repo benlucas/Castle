@@ -1,5 +1,5 @@
 'use strict';
-var services = angular.module('castle.services', ['ngResource']);
+var services = angular.module('Castle.Services', ['ngResource']);
 
 
 services.factory('WasteFactory', ['$resource', function($resource){

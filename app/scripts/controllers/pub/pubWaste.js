@@ -6,11 +6,13 @@ Castle.controller('PubWasteCtrl', ['$scope', '$routeParams', 'WasteFactory',
 		$scope.dateOptions = {
 			format: "dd/mm/yy"
 		};
+
 		$scope.setDefaults = function(data){
 			data.beer = null;
 			data.waste = "";
 			data.notes = "";
 		};
+		
 		$scope.setDefaults($scope.data);
 
 		$scope.getWaste = function(a,b){

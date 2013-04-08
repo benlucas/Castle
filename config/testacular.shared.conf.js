@@ -10,7 +10,7 @@ shared.basePath	 = '../'
 shared.defaultReporters = ['dots'];
 shared.defaultBrowsers = ['Chrome'];
 shared.defaultProxies = {
-  '/': 'http://localhost:3501'
+  '/': 'http://localhost:3501/'
 };
 
 exports.shared = shared;

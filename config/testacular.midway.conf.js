@@ -5,11 +5,12 @@ files = [
 
   //3rd Party Code
   'app/scripts/vendor/angular.min.js',
+  'app/scripts/vendor/angular-resource.js',
   'app/scripts/vendor/app.router.js',
 
   //App-specific Code
   'app/scripts/*.js',
-  'app/scripts/**/*.js',
+  'app/scripts/controllers/*.js',
 
   //Test-Specific Code
   'node_modules/chai/chai.js',

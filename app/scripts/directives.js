@@ -1,5 +1,5 @@
 'use strict';
-angular.module('castle.directives', [])
+angular.module('Castle.Directives', [])
 	.directive('navbar', function(){
 		return {
 			restrict: 'E',
