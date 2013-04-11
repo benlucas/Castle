@@ -8,19 +8,19 @@ var Castle = angular.module('Castle', ['Castle.Services', 'Castle.Directives', '
 				templateUrl: 'view/main',
 				controller: 'PubCtrl' 
 			}) 
-			.when('/pub/:slug', { 
+			.when('/pub/:id', { 
 				templateUrl: 'view/pub/index',
 				controller: 'PubIndexCtrl'
 			})
-			.when('/pub/:slug/waste', { 
+			.when('/pub/:id/waste', { 
 				templateUrl: 'view/pub/waste', 
 				controller: 'PubWasteCtrl' 
 			})
-			.when('/pub/:slug/turnover', { 
+			.when('/pub/:id/turnover', { 
 				templateUrl: 'view/pub/turnover',
 				controller: 'PubTurnoverCtrl'
 			})
-			.when('/pub/:slug/expenses', { 
+			.when('/pub/:id/expenses', { 
 				templateUrl: 'view/pub/expenses',
 				controller: 'PubExpensesCtrl'
 			})

@@ -1,14 +1,11 @@
 'use strict';
 
-var	fs		= require('fs'),
-		beer	= require("../models/beer");
+var	fs		= require('fs');
 
 module.exports = function(app){
 
 	app.get('/view/pub/waste', function(req, res){
-		beer.find(function(err, result){
-			return res.render('client/pub/waste', { beer:result});	
-		});
+		return res.render('client/pub/waste', { beer:['Carlsberg', 'Fosters', 'Stella']});
 	});
 
 	app.get('/view/:level1/:level2?', function(req, res){

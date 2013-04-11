@@ -5,18 +5,7 @@ pubSchema = new Schema({
 	name: String,
 	location: String,
 	slug: String,
-	waste: [new Schema({
-		beer: { type: Schema.Types.ObjectId, ref: 'Beer' },
-		person: String,
-		date: Date,
-		waste: Number,
-		notes: String
-	})],
-	turnover: [new Schema({
-		date: Date,
-		turnover: Number,
-		notes: String
-	})]
+	percent: Number
 });
 
 module.exports = mongoose.model('pub', pubSchema, 'pubs');
