@@ -42,6 +42,7 @@ app.configure('production', function(){
 require('./routes/clientViewRoutes')(app);
 require('./routes/api/pub')(app);
 require('./routes/api/waste')(app);
+require('./routes/api/turnover')(app);
  
 app.get('/', function(req, res) {
 	return res.render('index', { title:'Castle'});

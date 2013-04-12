@@ -8,11 +8,7 @@ module.exports = function(app){
 	var objectIDCheck = new RegExp("^[0-9a-fA-F]{24}$");
 
 	app.get('/api/pub', function(req, res) {
-		if(!objectIDCheck.test(req.query._id )){
-			return res.json('Invalid ID');
-		}
-
-		pubs.findOne({_id: new ObjectId(req.query._id)},
+		pubs.find(
 			function(err, result){
 			if(err) {
 				return res.json("Castle ERROR: "+ err);
@@ -22,12 +18,15 @@ module.exports = function(app){
 	});
 
 
-app.get('/api/pub/:slug', function(req, res) {
-		pubs.findOne({slug:req.params.slug}, 'name slug location', function(err, result){
+app.get('/api/pub/:id', function(req, res) {
+		if(!objectIDCheck.test(req.params.id )){
+			return res.json('Invalid ID');
+		}
+		pubs.findOne({_id:req.params.id}, function(err, result){
 			if(err){
-				return res.send("Castle ERROR: "+ err);
+				return res.json("Castle ERROR: "+ err);
 			}
-			return res.send(result);
+			return res.json(result);
 		});
 	});
 };

@@ -5,12 +5,12 @@
 		<h1>Turnover</h1>
 		<div class="span3">
 		<h2>Select Date</h2>
-			<div id="5" data-date="{{data.date | date}}" data-date-format="dd/mm/yy" ng-change="getWaste()" ng-model="data.date" bs-datepicker></div>
+			<div id="5" data-date="{{data.date | date}}" data-date-format="dd/mm/yy" ng-change="getTurnover()" ng-model="data.date" bs-datepicker></div>
 		</div>
 		<div class="span8">
 			<h2>Add New Turnover</h2>
 			<form name="newTurnover">
-				<input type="number" value="" placeholder="Turnover" name="turnover" ng-model="data.turnover" min="0" max="999999" required>
+				<input type="number" value="" placeholder="Amount" name="amount" ng-model="data.amount" min="0" max="999999" required>
 				<input type="text" value="" placeholder="Notes" name="notes" ng-model="data.notes">
 				<a href="" name="save" class="btn" ng:click="save()" ng-disabled="newTurnover.$pristine || newTurnover.$invalid">Save</a>
 			</form>
@@ -23,20 +23,20 @@
 				<thead>
 					<tr>
 						<th>Date</th>
-						<th>Turnover</th>
 						<th>Notes</th>
+						<th>Turnover</th>
 					</tr>
 				</thead>
 				<tbody>
-					<tr ng-repeat="turnover in pub.turnover">
+					<tr ng-repeat="turnover in turnover">
 						<td>{{turnover.date | date}}</td>
-						<td>{{turnover.turnover}}</td>
 						<td>{{turnover.notes}}</td>
+						<td>£{{turnover.amount}}</td>
 					</tr>
-					<tr ng-show="!pub.turnover.length"><td class="no-waste" colspan="5">No Turnover For {{data.date | date}}</td></tr>
-					<tr ng-show="pub.turnover.length">
-						<td>Total</td>
-						<td>£4444</td>
+					<tr ng-show="!turnover.length"><td class="no-waste" colspan="5">No Turnover For {{data.date | date}}</td></tr>
+					<tr ng-show="turnover.length">
+						<td colspan="2">Total</td>
+						<td>£{{total}}</td>
 					</tr>
 				</tbody>
 			</table>

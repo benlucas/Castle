@@ -3,8 +3,9 @@ var mongoose = require('mongoose'),
 
 turnoverSchema = new Schema({
 	pub : { type: Schema.Types.ObjectId, ref: 'Pub' },
+	notes: String,
 	amount: Number,
 	date: Date
 });
 
-module.exports = mongoose.model('Turnover', turnoverSchema, 'turnover'); 
+module.exports = mongoose.model('Turnover', turnoverSchema, 'turnover');

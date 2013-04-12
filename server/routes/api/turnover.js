@@ -3,28 +3,27 @@
 var	fs			= require('fs'),
 		moment	= require('moment'),
 		ObjectId = require('mongoose').Types.ObjectId,
-		waste	= require("../../models/waste");
+		turnover	= require("../../models/turnover");
 
 module.exports = function(app){
 
 	var objectIDCheck = new RegExp("^[0-9a-fA-F]{24}$");
 
-	app.get('/api/waste/:pubID', function(req, res){
+	app.get('/api/turnover/:pubID', function(req, res){
 
 		if(!objectIDCheck.test(req.params.pubID)){
 			return res.json('Error - Invalid objectID');
 		}
 
-		var date = moment().startOf('day'); 
-		
+		var startWeek = moment().startOf('week');		
 
 		if(req.query.date){
-			date = moment(req.query.date, 'DD/MM/YY').isValid() ? moment(req.query.date, 'DD/MM/YY') : date;
+			startWeek = moment(req.query.date, 'DD/MM/YY').isValid() ? moment(req.query.date, 'DD/MM/YY').startOf('week') : startWeek;
 		}
 
-		date.subtract('minutes', date.zone()); //subtract timezone difference for daylight saving
+		var endWeek = startWeek.clone().endOf('week');
 
-		waste.find({pubID: new ObjectId(req.params.pubID), date: date.toDate()},
+		turnover.find({pub: new ObjectId(req.params.pubID), date: {$gte: startWeek.toDate(), $lte: endWeek.toDate()}},
 			function(err, result){
 				if(err){
 					res.json(err);
@@ -34,16 +33,16 @@ module.exports = function(app){
 
 	});
 
-	app.post('/api/waste', function(req, res){
-		var date = moment(req.body.date).startOf('day'); 
+	app.post('/api/turnover', function(req, res){
+		var date = moment(req.body.date).startOf('day');	
 		date.subtract('minutes', date.zone()); //subtract timezone difference for daylight saving
 
 		if(req.body.date && date.isValid()){
 			req.body.date = date.toDate();
 		}
 
-		var wasteToSave = new waste(req.body);
-		wasteToSave.save(function(err,result){
+		var toSave = new turnover(req.body);
+		toSave.save(function(err,result){
 			if(err){
 				res.json(err);
 			}
