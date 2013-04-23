@@ -42,12 +42,18 @@ module.exports = function(app){
 		}
 
 		var toSave = new turnover(req.body);
-		toSave.save(function(err,result){
-			if(err){
-				res.json(err);
+				console.log(req.body);
+		turnover.update({date: req.body.date}, req.body, {upsert: true},
+			function(err, numberAffected, result){
+				console.log(err);
+				console.log(numberAffected);
+				console.log(result);
+				if(err){
+					res.json(err);
+				}
+				res.json(result);
 			}
-			res.json(result);
-		});
+		);
 	}); 
 
 };
