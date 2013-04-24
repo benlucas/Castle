@@ -35,14 +35,14 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr ng-repeat="wastage in waste">
+					<tr ng-repeat="wastage in waste| orderBy: date">
 						<td>{{wastage.date | date}}</td>
 						<td>{{wastage.beerName}}</td>
 						<td>{{wastage.amount}}</td>
 						<td>{{wastage.notes}}</td>
 						<td>Test</td>
 					</tr>
-					<tr ng-show="!pub.waste.length"><td class="no-waste" colspan="5">No Waste For {{data.date | date}}</td></tr>
+					<tr ng-show="!waste.length"><td class="no-waste" colspan="5">No Waste For {{data.date | date}}</td></tr>
 				</tbody>
 			</table>
 		</div>

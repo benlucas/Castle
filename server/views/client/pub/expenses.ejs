@@ -1,0 +1,51 @@
+<navbar pubname="{{pub.name}}" pubid="{{pub._id}}"></navbar>
+
+<div class="container">
+	<div class="content">
+		<h1>Expenses</h1>
+		<div class="span3">
+		<h2>Select Date</h2>
+			<div id="5" data-date="{{data.date | date}}" data-date-format="dd/mm/yy" ng-change="getData()" ng-model="data.date" bs-datepicker></div>
+		</div>
+		<div class="span8">
+			<h2>Add New Expense</h2>
+
+			<form name="newData">
+				<input type="number" value="" placeholder="Cost" name="cost" ng-model="data.cost" min="0" max="99" required>
+				<br>
+				<input type="text" value="" placeholder="Description" name="description" ng-model="data.description">
+				<br>
+				VAT
+				<div class="btn-group" ng-model="data.vat" bs-buttons-radio>
+					<button type="button" class="btn" value="true">Yes</button>
+					<button type="button" class="btn" value="false">No</button>
+				</div>
+				<br><br>
+				<a href="" name="saveData" class="btn" ng:click="save()" ng-disabled="newData.$pristine || newData.$invalid">Save</a>
+			</form>
+			<hr/>
+		</div>
+		<div class="span7">
+			<h2>Current Expenses</h2>
+			<table class="table table-bordered table-hover">
+				<thead>
+					<tr>
+						<th>Date</th>
+						<th>Cost</th>
+						<th>VAT</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="expense in expenses| orderBy: date">
+						<td>{{expense.date | date}}</td>
+						<td>{{expense.cost}}</td>
+						<td>{{expense.vat}}</td>
+						<td>{{expense.description}}</td>
+					</tr>
+					<tr ng-show="!expenses.length"><td class="no-waste" colspan="5">No Expenses For {{data.date | date}}</td></tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
