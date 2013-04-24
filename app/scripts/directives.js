@@ -4,7 +4,7 @@ angular.module('Castle.Directives', [])
 		return {
 			restrict: 'E',
 			replace: true,
-			scope: { pubName:'@pubname', pubSlug: '@pubslug' },
+			scope: { pubName:'@pubname', pubID: '@pubid' },
 			template: '<div class="navbar navbar-inverse navbar-fixed-top" bs-navbar>'+
 										'<div class="navbar-inner">'+
 											'<a class="brand" href="#">Main Page</a>'+
@@ -17,16 +17,16 @@ angular.module('Castle.Directives', [])
 												'<div class="nav-collapse collapse">'+
 													'<ul class="nav">'+
 														'<li>'+
-															'<a href="#/pub/{{pubSlug}}">Pub Home</a>'+
+															'<a href="#/pub/{{pubID}}">Pub Home</a>'+
 														'</li>'+
 														'<li data-match-route=".*/waste" >'+
-															'<a href="#/pub/{{pubSlug}}/waste">Waste</a>'+
+															'<a href="#/pub/{{pubID}}/waste">Waste</a>'+
 														'</li>'+
 														'<li data-match-route=".*/turnover">'+
-															'<a href="#/pub/{{pubSlug}}/turnover">Turnover</a>'+
+															'<a href="#/pub/{{pubID}}/turnover">Turnover</a>'+
 														'</li>'+
 														'<li data-match-route=".*/expenses" >'+
-															'<a  href="#/pub/{{pubSlug}}/expenses">Expenses</a>'+
+															'<a  href="#/pub/{{pubID}}/expenses">Expenses</a>'+
 														'</li>'+
 													'</ul>'+
 												'</div>'+
