@@ -28,7 +28,7 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr ng-repeat="turnover in turnover">
+					<tr ng-repeat="turnover in turnover | orderBy:'date'">
 						<td>{{turnover.date | date}}</td>
 						<td>{{turnover.notes}}</td>
 						<td>£{{turnover.amount}}</td>
